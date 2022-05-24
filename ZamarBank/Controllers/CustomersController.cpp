@@ -2,10 +2,18 @@
 
 void CustomersController::LoginGet()
 {
+	return LoginView();
 }
 
 void CustomersController::LoginPost(CustomerLoginViewModel model)
 {
+	Customer customer = CustomerAccess::GetByIdentificationNumber(model.IdentificationNumber);
+	if (customer.ID == 0 || customer.Password != model.Password)
+	{
+		return LoginView("TC Kimlik Numarasý veya þifre yanlýþ.");
+	}
+
+	
 }
 
 void CustomersController::RegisterGet() {

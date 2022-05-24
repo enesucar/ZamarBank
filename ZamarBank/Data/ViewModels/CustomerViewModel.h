@@ -5,7 +5,7 @@ using namespace std;
 
 class CustomerLoginViewModel {
 	public:
-		string Number; // this is IdentificationNumber or CustomerNumber
+		string IdentificationNumber;
 		string Password;
 };
 

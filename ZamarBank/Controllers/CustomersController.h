@@ -5,6 +5,7 @@
 #include "../Data/ViewModels/CustomerViewModel.h"
 #include "../Data/Access/CustomerAccess.h"
 #include "../Views/Register/RegisterView.h"
+#include "../Views/Login/LoginView.h"
 
 using namespace std;
 
