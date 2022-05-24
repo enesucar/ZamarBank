@@ -1,5 +1,3 @@
-#include "../Shared/Partials/_Header.h"
-#include "../../Controllers/CustomersController.h"
 #include "LoginView.h"
 
 void LoginView(string message) {

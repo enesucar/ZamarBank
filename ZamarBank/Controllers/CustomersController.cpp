@@ -8,12 +8,28 @@ void CustomersController::LoginGet()
 void CustomersController::LoginPost(CustomerLoginViewModel model)
 {
 	Customer customer = CustomerAccess::GetByIdentificationNumber(model.IdentificationNumber);
-	if (customer.ID == 0 || customer.Password != model.Password)
+	LoginHistory loginHistory;
+
+	if (customer.ID == 0)
 	{
-		return LoginView("TC Kimlik Numarasý veya þifre yanlýþ.");
+		return LoginView("TC Kimlik Numarasý yanlýþ.");
+	}
+	else if (customer.Password != model.Password)
+	{
+		loginHistory.CustomerID = customer.ID;
+		loginHistory.IsLoginSuccessful = false;
+		LoginHistoryAccess::Add(loginHistory);
+
+		return LoginView("Þifre yanlýþ.");
 	}
 
-	
+	loginHistory.CustomerID = customer.ID;
+	loginHistory.IsLoginSuccessful = true;
+	LoginHistoryAccess::Add(loginHistory);
+
+	ProcessController processController;
+	processController.ProcessGet();
+
 }
 
 void CustomersController::RegisterGet() {

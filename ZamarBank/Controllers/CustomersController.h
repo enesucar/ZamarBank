@@ -1,11 +1,13 @@
 #pragma once
 #include <vector>
 #include "HomeController.h"
+#include "ProcessController.h"
 #include "../Data/Models/Customer.h"
 #include "../Data/ViewModels/CustomerViewModel.h"
 #include "../Data/Access/CustomerAccess.h"
 #include "../Views/Register/RegisterView.h"
 #include "../Views/Login/LoginView.h"
+#include "../Data/Access/LoginHistoryAccess.h"
 
 using namespace std;
 

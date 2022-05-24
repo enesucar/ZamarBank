@@ -51,6 +51,18 @@
     <ClCompile Include="Views\Login\LoginView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Controllers\ProcessController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\Process\ProcessView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\Access\LoginHistoryAccess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Controllers\AccountsController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Databases\ZamarBankDB.db" />
@@ -106,6 +118,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Views\Login\LoginView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Controllers\ProcessController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Views\Process\ProcessView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Access\LoginHistoryAccess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Controllers\AccountsController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
