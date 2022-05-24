@@ -63,6 +63,18 @@
     <ClCompile Include="Controllers\AccountsController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Views\Accounts\AccountsView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\Access\AccountAccess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Views\Accounts\AddAccountView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\String\String.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Databases\ZamarBankDB.db" />
@@ -130,6 +142,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Controllers\AccountsController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Views\Accounts\AccountsView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Access\AccountAccess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Views\Accounts\AddAccountView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\String\String.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

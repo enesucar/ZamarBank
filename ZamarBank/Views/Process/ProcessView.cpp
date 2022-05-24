@@ -1,6 +1,6 @@
 #include "ProcessView.h"
 
-void ProcessView(string message) {
+void ProcessView(Customer customer, string message) {
 	int choise;
 
 	_PartialHeaderView();
@@ -20,16 +20,19 @@ void ProcessView(string message) {
 	cout << "\nSeçiminiz: ";
 	cin >> choise;
 
-	if (true)
+	if (choise == 1)
 	{
-
+		AccountsController accountsController;
+		accountsController.AccountsGet(customer);
+	}
+	else if (choise == 2)
+	{
+		AccountsController accountsController;
+		accountsController.AddAccountGet(customer);
 	}
 	else if (choise == 7)
 	{
 		HomeController homeController;
 		return homeController.HomeGet();
 	}
-	
-
-	//return customerController.LoginPost(loginModel);
 }

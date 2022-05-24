@@ -23,13 +23,17 @@
     <ClCompile Include="Controllers\CustomersController.cpp" />
     <ClCompile Include="Controllers\HomeController.cpp" />
     <ClCompile Include="Controllers\ProcessController.cpp" />
+    <ClCompile Include="Data\Access\AccountAccess.cpp" />
     <ClCompile Include="Data\Access\CustomerAccess.cpp" />
     <ClCompile Include="Data\Access\LoginHistoryAccess.cpp" />
     <ClCompile Include="Helpers\DateTime\DateTime.cpp" />
     <ClCompile Include="Helpers\Random\Random.cpp" />
     <ClCompile Include="Helpers\Database\Database.cpp" />
+    <ClCompile Include="Helpers\String\String.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Sources\SQLite3\sqlite3.c" />
+    <ClCompile Include="Views\Accounts\AccountsView.cpp" />
+    <ClCompile Include="Views\Accounts\AddAccountView.cpp" />
     <ClCompile Include="Views\Home\Home.cpp" />
     <ClCompile Include="Views\Login\LoginView.cpp" />
     <ClCompile Include="Views\Process\ProcessView.cpp" />
@@ -45,6 +49,7 @@
     <ClInclude Include="Controllers\ProcessController.h" />
     <ClInclude Include="Controllers\CustomersController.h" />
     <ClInclude Include="Controllers\HomeController.h" />
+    <ClInclude Include="Data\Access\AccountAccess.h" />
     <ClInclude Include="Data\Access\CustomerAccess.h" />
     <ClInclude Include="Data\Access\LoginHistoryAccess.h" />
     <ClInclude Include="Data\Enums\AccountType.h" />
@@ -57,6 +62,9 @@
     <ClInclude Include="Helpers\DateTime\DateTime.h" />
     <ClInclude Include="Helpers\Random\Random.h" />
     <ClInclude Include="Helpers\Database\Database.h" />
+    <ClInclude Include="Helpers\String\String.h" />
+    <ClInclude Include="Views\Accounts\AccountsView.h" />
+    <ClInclude Include="Views\Accounts\AddAccountView.h" />
     <ClInclude Include="Views\Home\Home.h" />
     <ClInclude Include="Views\Login\LoginView.h" />
     <ClInclude Include="Views\Process\ProcessView.h" />

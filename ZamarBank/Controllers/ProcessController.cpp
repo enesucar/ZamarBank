@@ -1,6 +1,6 @@
 #include "ProcessController.h"
 
-void ProcessController::ProcessGet(string message)
+void ProcessController::ProcessGet(Customer customer, string message)
 {
-	return ProcessView(message);
+	return ProcessView(customer, message);
 }

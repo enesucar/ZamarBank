@@ -1,4 +1,5 @@
 #pragma once
+#include "../Data/Models/Customer.h"
 #include "../Views/Process/ProcessView.h"
 
 using namespace std;
@@ -6,5 +7,5 @@ using namespace std;
 class ProcessController
 {
 	public:
-		void ProcessGet(string message = "");
+		void ProcessGet(Customer customer, string message = "");
 };

@@ -28,8 +28,7 @@ void CustomersController::LoginPost(CustomerLoginViewModel model)
 	LoginHistoryAccess::Add(loginHistory);
 
 	ProcessController processController;
-	processController.ProcessGet();
-
+	processController.ProcessGet(customer);
 }
 
 void CustomersController::RegisterGet() {
