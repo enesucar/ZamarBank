@@ -14,5 +14,5 @@ class CustomerAccess
 		static Customer Get(int ID);
 		static Customer GetByIdentificationNumber(string identificationNumber);
 		static vector<Customer> GetList();
-		static void Add(CustomerRegisterViewModel model);
+		static int Add(CustomerRegisterViewModel model);
 };

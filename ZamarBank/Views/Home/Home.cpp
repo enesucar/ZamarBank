@@ -30,4 +30,8 @@ void HomeView(string message) {
 	{
 		return customerController.ChangePasswordGet();
 	}
+	else
+	{
+		return HomeView("Lütfen geçerli bir numara tuþlayýnýz.");
+	}
 }

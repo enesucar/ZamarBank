@@ -23,13 +23,17 @@ void CustomersController::RegisterPost(CustomerRegisterViewModel model)
 			 isPasswordBeginWithZero(model.Password) ||
 			 isPasswordHaveAnyCharacter(model.Password))
 	{
-		return RegisterView("Þifreniz geçersiz, lütfen tekrar deneyiniz.");
+		return RegisterView("Þifreniz geçersiz.");
 	}
 
-	CustomerAccess::Add(model);
+	int result = CustomerAccess::Add(model);
+	if (!result)
+	{
+		return RegisterView("Kullanýcý kaydý yapýlamadý, lütfen tekrar deneyiniz.");
+	}
 
 	HomeController homeController;
-	return homeController.HomeGet("Kullanýcý sisteme baþarýyla eklendi!");
+	return homeController.HomeGet("Kullanýcý sisteme baþarýyla eklendi.");
 }
 
 void CustomersController::ChangePasswordGet()
@@ -44,7 +48,7 @@ void CustomersController::ChangePasswordPost(CustomerChangePasswordViewModel mod
 
 bool CustomersController::isCustomerExist(string number) { // s takasýna bak
 	Customer customer = CustomerAccess::GetByIdentificationNumber(number);
-	return false;
+	return (customer.ID == 0) ? false : true;
 }
 
 bool CustomersController::isPasswordsSame(string password, string passwordAgain) {
