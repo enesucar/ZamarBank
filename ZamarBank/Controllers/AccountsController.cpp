@@ -26,6 +26,7 @@ void AccountsController::AddAccountPost(AccountType type, Customer customer, str
 
 void AccountsController::AccountActivitiesGet(int accountID, Customer customer, string message) {
 	Account account = AccountAccess::GetByID(accountID);
+
 	if (account.CustomerID != customer.ID) // kullanýcýya ait olmayan hesap
 	{	
 		return ProcessView(customer, "Hesap ID'sini yanlýþ girdiniz.");

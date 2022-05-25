@@ -100,7 +100,7 @@ int AccountAccess::Add(AccountType type, int customerID) {
 	account.CreateDate = DateTimeHelper::GetCurrentDateTime();
 	account.IsDeleted = 0;
 
-	//Balance'ý stringe çevirdiðimizde virgüllü oluyor. (Örn: 15,5600) Bu yüzden sql sorgusunun çalýþmamasýna neden oluyor.
+	//Balance'ý stringe çevirdiðimizde virgüllü oluyor. (Örn: 15,5600) Bu yüzden sql sorgusunun çalýþmamasýna neden oluyor. ReplaceAll ile virgülü nokta olarak düzeltiyoruz.
 	string accountBalanceString = to_string(account.Balance);
 	accountBalanceString = StringHelper::ReplaceAll(accountBalanceString, ",", ".");
 

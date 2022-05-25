@@ -24,6 +24,7 @@ void TransactionsController::AddTransactionPost(TransactionViewModel model, Cust
 	}
 	
 	string result = TransactionAccess::Add(model);
+	
 	if (result == "1")
 	{
 		ProcessController processController;

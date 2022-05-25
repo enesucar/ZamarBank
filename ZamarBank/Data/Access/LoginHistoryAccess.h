@@ -2,9 +2,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "../Models/LoginHistory.h"
 #include "../../Helpers/Database/Database.h"
 #include "../../Helpers/DateTime/DateTime.h"
-#include "../Models/LoginHistory.h"
 
 class LoginHistoryAccess
 {

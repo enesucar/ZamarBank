@@ -21,6 +21,6 @@ inline const char* AccountTypeToString(AccountType type)
         case AccountType::Altin_Hesabi:
             return "Altın";
         default:     
-           return "TL";
+           return "";
     }
 }

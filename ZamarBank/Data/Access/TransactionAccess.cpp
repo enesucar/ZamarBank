@@ -82,5 +82,9 @@ string TransactionAccess::Add(TransactionViewModel model)
 	} 
 
 	int result = Database::ExecuteSQL(sql);
-	return "1";
+	if (result > 0)
+	{
+		return "1";
+	}
+	return "Ýþlem gerçekleþtirilemedi.";
 }

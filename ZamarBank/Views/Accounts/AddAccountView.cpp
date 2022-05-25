@@ -1,9 +1,9 @@
 #include "AddAccountView.h"
 
 void AddAccountView(Customer customer, string message) {
-	int choice;
-
 	_PartialHeaderView(customer, message);
+
+	int choice;
 
 	cout << "1: TL Hesabý" << endl;
 	cout << "2: Dolar Hesabý" << endl;
