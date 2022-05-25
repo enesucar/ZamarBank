@@ -1,10 +1,10 @@
 #include "Home.h"
 
 void HomeView(string message) {
+	_PartialHeaderView(message);
+	
 	CustomersController customerController;
 	int choice;
-
-	_PartialHeaderView(message);
 
 	cout << "1: Müþteri giriþi" << endl;
 	cout << "2: Müþteri kaydý" << endl;

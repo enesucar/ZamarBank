@@ -12,7 +12,7 @@ void CustomersController::LoginPost(CustomerLoginViewModel model)
 
 	if (customer.ID == 0)
 	{
-		return LoginView("TC Kimlik Numarasý yanlýþ.");
+		return LoginView("TC Kimlik numarasý yanlýþ.");
 	}
 	else if (customer.Password != model.Password)
 	{
@@ -59,16 +59,6 @@ void CustomersController::RegisterPost(CustomerRegisterViewModel model)
 	return homeController.HomeGet("Kullanýcý sisteme baþarýyla eklendi.");
 }
 
-void CustomersController::ChangePasswordGet()
-{
-
-}
-
-void CustomersController::ChangePasswordPost(CustomerChangePasswordViewModel model)
-{
-
-}
-
 void CustomersController::LoginHistoryGet(Customer customer) {
 	vector<LoginHistory> loginHistories = LoginHistoryAccess::GetListByCustomerID(customer.ID);
 	return LoginHistoriesView(loginHistories, customer);
@@ -94,7 +84,7 @@ bool CustomersController::isPasswordBeginWithZero(string password) {
 bool CustomersController::isPasswordHaveAnyCharacter(string password) {
 	string numbers = "0123456789";
 	
-	for (char number : password) // password should be to lower
+	for (char number : password)
 	{
 		if (numbers.find(number) == string::npos)
 		{

@@ -19,8 +19,6 @@ class CustomersController
 		void LoginPost(CustomerLoginViewModel model);
 		void RegisterGet();
 		void RegisterPost(CustomerRegisterViewModel model);
-		void ChangePasswordGet();
-		void ChangePasswordPost(CustomerChangePasswordViewModel model);
 		void LoginHistoryGet(Customer customer);
 
 	private:

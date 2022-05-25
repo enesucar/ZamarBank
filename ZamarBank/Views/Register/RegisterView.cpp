@@ -1,26 +1,21 @@
 #include "RegisterView.h"
 
 void RegisterView(string message) {
-	_PartialHeaderView();
+	_PartialHeaderView(message);
 
 	CustomerRegisterViewModel registerModel;
 	CustomersController customerController;
-	
-	if (message != "")
-	{
-		cout << "!!!!!!" << message << "!!!!!!" << endl;
-	}
 
-	cout << "Isminiz: ";
+	cout << "Ýsim: ";
 	cin >> registerModel.FirstName;
 
-	cout << "Soyisminiz: ";
+	cout << "Soy isim: ";
 	cin >> registerModel.LastName;
 	
-	cout << "Kimlik Numaraniz: ";
+	cout << "TC Kimlik Numarasý: ";
 	cin >> registerModel.IdentificationNumber;
 
-	cout << "Sifre: ";
+	cout << "Þifre: ";
 	cin >> registerModel.Password;
 
 	cout << "Sifre Tekrar: ";

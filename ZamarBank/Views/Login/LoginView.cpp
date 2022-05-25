@@ -1,20 +1,15 @@
 #include "LoginView.h"
 
 void LoginView(string message) {
-	_PartialHeaderView();
+	_PartialHeaderView(message);
 
 	CustomerLoginViewModel loginModel;
 	CustomersController customerController;
 
-	if (message != "")
-	{
-		cout << "!!!!!!" << message << "!!!!!!" << endl;
-	}
-
 	cout << "TC Kimlik Numarasý: ";
 	cin >> loginModel.IdentificationNumber;
 
-	cout << "Þifreniz: ";
+	cout << "Þifre: ";
 	cin >> loginModel.Password;
 
 	return customerController.LoginPost(loginModel);
