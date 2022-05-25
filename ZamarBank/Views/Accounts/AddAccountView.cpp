@@ -3,7 +3,7 @@
 void AddAccountView(Customer customer, string message) {
 	int choice;
 
-	_PartialHeaderView();
+	_PartialHeaderView(customer);
 
 	if (message != "")
 	{

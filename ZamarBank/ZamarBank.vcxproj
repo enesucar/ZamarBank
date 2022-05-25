@@ -23,9 +23,11 @@
     <ClCompile Include="Controllers\CustomersController.cpp" />
     <ClCompile Include="Controllers\HomeController.cpp" />
     <ClCompile Include="Controllers\ProcessController.cpp" />
+    <ClCompile Include="Controllers\TransactionsController.cpp" />
     <ClCompile Include="Data\Access\AccountAccess.cpp" />
     <ClCompile Include="Data\Access\CustomerAccess.cpp" />
     <ClCompile Include="Data\Access\LoginHistoryAccess.cpp" />
+    <ClCompile Include="Data\Access\TransactionAccess.cpp" />
     <ClCompile Include="Helpers\DateTime\DateTime.cpp" />
     <ClCompile Include="Helpers\Random\Random.cpp" />
     <ClCompile Include="Helpers\Database\Database.cpp" />
@@ -40,6 +42,9 @@
     <ClCompile Include="Views\Process\ProcessView.cpp" />
     <ClCompile Include="Views\Register\RegisterView.cpp" />
     <ClCompile Include="Views\Shared\Partials\_Header.cpp" />
+    <ClCompile Include="Views\Transactions\DepositView.cpp" />
+    <ClCompile Include="Views\Transactions\TransferView.cpp" />
+    <ClCompile Include="Views\Transactions\WithdrawView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Databases\ZamarBankDB.db" />
@@ -50,9 +55,11 @@
     <ClInclude Include="Controllers\ProcessController.h" />
     <ClInclude Include="Controllers\CustomersController.h" />
     <ClInclude Include="Controllers\HomeController.h" />
+    <ClInclude Include="Controllers\TransactionsController.h" />
     <ClInclude Include="Data\Access\AccountAccess.h" />
     <ClInclude Include="Data\Access\CustomerAccess.h" />
     <ClInclude Include="Data\Access\LoginHistoryAccess.h" />
+    <ClInclude Include="Data\Access\TransactionAccess.h" />
     <ClInclude Include="Data\Enums\AccountType.h" />
     <ClInclude Include="Data\Enums\TransactionType.h" />
     <ClInclude Include="Data\Models\Account.h" />
@@ -60,6 +67,7 @@
     <ClInclude Include="Data\Models\LoginHistory.h" />
     <ClInclude Include="Data\Models\Transaction.h" />
     <ClInclude Include="Data\ViewModels\CustomerViewModel.h" />
+    <ClInclude Include="Data\ViewModels\TransactionViewModel.h" />
     <ClInclude Include="Helpers\DateTime\DateTime.h" />
     <ClInclude Include="Helpers\Random\Random.h" />
     <ClInclude Include="Helpers\Database\Database.h" />
@@ -72,6 +80,9 @@
     <ClInclude Include="Views\Process\ProcessView.h" />
     <ClInclude Include="Views\Register\RegisterView.h" />
     <ClInclude Include="Views\Shared\Partials\_Header.h" />
+    <ClInclude Include="Views\Transactions\DepositView.h" />
+    <ClInclude Include="Views\Transactions\TransferView.h" />
+    <ClInclude Include="Views\Transactions\WithdrawView.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

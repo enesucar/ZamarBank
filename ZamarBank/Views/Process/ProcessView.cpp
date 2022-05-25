@@ -3,7 +3,7 @@
 void ProcessView(Customer customer, string message) {
 	int choise;
 
-	_PartialHeaderView();
+	_PartialHeaderView(customer);
 
 	if (message != "")
 	{
@@ -31,10 +31,25 @@ void ProcessView(Customer customer, string message) {
 		AccountsController accountsController;
 		accountsController.AddAccountGet(customer);
 	}
+	else if (choise == 3)
+	{
+		TransactionsController transactionsController;
+		transactionsController.AddTransactionGet(TransactionType::Transfer, customer);
+	}
+	else if (choise == 4)
+	{
+		TransactionsController transactionsController;
+		transactionsController.AddTransactionGet(TransactionType::Withdraw, customer);
+	}
+	else if (choise == 5)
+	{
+		TransactionsController transactionsController;
+		transactionsController.AddTransactionGet(TransactionType::Deposit, customer);
+	}
 	else if (choise == 6)
 	{
-		CustomersController customerController;
-		customerController.LoginHistoryGet(customer);
+		CustomersController customersController;
+		customersController.LoginHistoryGet(customer);
 	}
 	else if (choise == 8)
 	{

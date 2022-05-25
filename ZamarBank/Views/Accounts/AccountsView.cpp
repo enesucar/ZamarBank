@@ -1,7 +1,7 @@
 #include "AccountsView.h"
 
 void AccountsView(vector<Account> accounts, Customer customer, string message) {
-	_PartialHeaderView();
+	_PartialHeaderView(customer);
 
 	if (message != "")
 	{

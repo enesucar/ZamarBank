@@ -1,5 +1,63 @@
 #include "AccountAccess.h"
 
+Account AccountAccess::GetByID(int ID)
+{
+	Account account;
+
+	const char* path = Database::GetDatabaseFolderPath();
+	sqlite3_stmt* stmt;
+	sqlite3* DB;
+
+	sqlite3_open(path, &DB);
+
+	string sql = "Select * From Account Where ID = '" + to_string(ID) + "' And IsDeleted = 0;";
+	int rc = sqlite3_prepare_v2(DB, sql.c_str(), -1, &stmt, NULL);
+
+	while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
+		account.ID = sqlite3_column_int(stmt, 0);
+		account.CustomerID = sqlite3_column_int(stmt, 1);
+		account.Type = (AccountType)sqlite3_column_int(stmt, 2);
+		account.IBAN = string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3)));
+		account.Balance = sqlite3_column_double(stmt, 4);
+		account.CreateDate = string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5)));
+		account.IsDeleted = sqlite3_column_int(stmt, 6);
+	}
+
+	sqlite3_finalize(stmt);
+	sqlite3_close(DB);
+
+	return account;
+}
+
+Account AccountAccess::GetByIBAN(string IBAN)
+{
+	Account account;
+
+	const char* path = Database::GetDatabaseFolderPath();
+	sqlite3_stmt* stmt;
+	sqlite3* DB;
+
+	sqlite3_open(path, &DB);
+
+	string sql = "Select * From Account Where IBAN = '" + IBAN + "' And IsDeleted = 0;";
+	int rc = sqlite3_prepare_v2(DB, sql.c_str(), -1, &stmt, NULL);
+
+	while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
+		account.ID = sqlite3_column_int(stmt, 0);
+		account.CustomerID = sqlite3_column_int(stmt, 1);
+		account.Type = (AccountType)sqlite3_column_int(stmt, 2);
+		account.IBAN = string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3)));
+		account.Balance = sqlite3_column_double(stmt, 4);
+		account.CreateDate = string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5)));
+		account.IsDeleted = sqlite3_column_int(stmt, 6);
+	}
+
+	sqlite3_finalize(stmt);
+	sqlite3_close(DB);
+
+	return account;
+}
+
 vector<Account> AccountAccess::GetListByCustomerID(int customerID)
 {
 	vector<Account> accounts;
@@ -54,4 +112,17 @@ int AccountAccess::Add(AccountType type, int customerID) {
 
 	int result = Database::ExecuteSQL(sql);
 	return result;
+}
+
+int AccountAccess::UpdateBalance(int accountID, double balance) {
+	string balanceString = to_string(balance);
+	balanceString = StringHelper::ReplaceAll(balanceString, ",", ".");
+
+	string sql = "Update Account ";
+	sql += "Set Balance = Balance + " + balanceString + " ";
+	sql += "Where ID = " + to_string(accountID) + " And IsDeleted = 0";
+
+	int result = Database::ExecuteSQL(sql);
+	return result;
+
 }
