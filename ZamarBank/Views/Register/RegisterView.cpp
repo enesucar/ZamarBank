@@ -5,6 +5,7 @@ void RegisterView(string message) {
 
 	CustomerRegisterViewModel registerModel;
 	CustomersController customerController;
+	cout << "Þifreniz sadece 6 adet rakamdan oluþmalýdýr.\nÞifreniz 0 ile baþlamamalýdýr.\n\n";
 
 	cout << "Ýsim: ";
 	cin >> registerModel.FirstName;

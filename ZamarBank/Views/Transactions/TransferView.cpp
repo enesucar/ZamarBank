@@ -1,12 +1,7 @@
 #include "TransferView.h"
 
 void TransferView(Customer customer, string message) {
-	_PartialHeaderView(customer);
-
-	if (message != "")
-	{
-		cout << "!!!!!!" << message << "!!!!!!" << endl;
-	}
+	_PartialHeaderView(customer, message);
 
 	TransactionViewModel model;
 	model.Type = TransactionType::Transfer;

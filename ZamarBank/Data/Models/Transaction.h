@@ -12,7 +12,6 @@ class Transaction
 		int ToAccountID;
 		TransactionType Type;
 		double Balance;
-		double AvailableBalance;
 		string Description;
 		string CreateDate;
 };

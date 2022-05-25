@@ -34,6 +34,7 @@
     <ClCompile Include="Helpers\String\String.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Sources\SQLite3\sqlite3.c" />
+    <ClCompile Include="Views\Accounts\AccountActivities.cpp" />
     <ClCompile Include="Views\Accounts\AccountsView.cpp" />
     <ClCompile Include="Views\Accounts\AddAccountView.cpp" />
     <ClCompile Include="Views\Home\Home.cpp" />
@@ -72,6 +73,7 @@
     <ClInclude Include="Helpers\Random\Random.h" />
     <ClInclude Include="Helpers\Database\Database.h" />
     <ClInclude Include="Helpers\String\String.h" />
+    <ClInclude Include="Views\Accounts\AccountActivities.h" />
     <ClInclude Include="Views\Accounts\AccountsView.h" />
     <ClInclude Include="Views\Accounts\AddAccountView.h" />
     <ClInclude Include="Views\Home\Home.h" />

@@ -12,8 +12,7 @@
 class CustomerAccess
 {
 	public:
-		static Customer Get(int ID);
+		static Customer GetByID(int ID);
 		static Customer GetByIdentificationNumber(string identificationNumber);
-		static vector<Customer> GetList();
 		static int Add(CustomerRegisterViewModel model);
 };

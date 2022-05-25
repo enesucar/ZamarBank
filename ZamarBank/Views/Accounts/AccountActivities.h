@@ -6,7 +6,8 @@
 #include "../../Controllers/ProcessController.h"
 #include "../Shared/Partials/_Header.h"
 #include "../../Data/Models/Account.h"
+#include "../../Data/Models/Transaction.h"
 
 using namespace std;
 
-void AccountsView(vector<Account> accounts, Customer customer, string message = "");
+void AccountActivitiesView(vector<Transaction>, Customer customer, string message = "");

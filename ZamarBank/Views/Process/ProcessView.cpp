@@ -1,14 +1,9 @@
 #include "ProcessView.h"
 
 void ProcessView(Customer customer, string message) {
-	int choise;
+	_PartialHeaderView(customer, message);
 
-	_PartialHeaderView(customer);
-
-	if (message != "")
-	{
-		cout << "!!!!!!" << message << "!!!!!!" << endl;
-	}
+	int choice;
 
 	cout << "1: Hesaplarým" << endl;
 	cout << "2: Hesap Oluþtur" << endl;
@@ -16,42 +11,41 @@ void ProcessView(Customer customer, string message) {
 	cout << "4: Para Çekme" << endl;
 	cout << "5: Para Yatýrma" << endl;
 	cout << "6: Giriþ Kayýtlarým" << endl;
-	cout << "7: Þifre Deðiþtir" << endl;
-	cout << "8: Çýkýþ" << endl;
+	cout << "7: Çýkýþ" << endl;
 	cout << "\nSeçiminiz: ";
-	cin >> choise;
+	cin >> choice;
 
-	if (choise == 1)
+	if (choice == 1)
 	{
 		AccountsController accountsController;
 		accountsController.AccountsGet(customer);
 	}
-	else if (choise == 2)
+	else if (choice == 2)
 	{
 		AccountsController accountsController;
 		accountsController.AddAccountGet(customer);
 	}
-	else if (choise == 3)
+	else if (choice == 3)
 	{
 		TransactionsController transactionsController;
 		transactionsController.AddTransactionGet(TransactionType::Transfer, customer);
 	}
-	else if (choise == 4)
+	else if (choice == 4)
 	{
 		TransactionsController transactionsController;
 		transactionsController.AddTransactionGet(TransactionType::Withdraw, customer);
 	}
-	else if (choise == 5)
+	else if (choice == 5)
 	{
 		TransactionsController transactionsController;
 		transactionsController.AddTransactionGet(TransactionType::Deposit, customer);
 	}
-	else if (choise == 6)
+	else if (choice == 6)
 	{
 		CustomersController customersController;
 		customersController.LoginHistoryGet(customer);
 	}
-	else if (choise == 8)
+	else if (choice == 7)
 	{
 		HomeController homeController;
 		return homeController.HomeGet();

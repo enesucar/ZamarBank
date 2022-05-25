@@ -6,9 +6,11 @@
 #include "../../Helpers/Database/Database.h"
 #include "../../Helpers/DateTime/DateTime.h"
 #include "../ViewModels/TransactionViewModel.h"
+#include "../Models/Transaction.h"
 
 class TransactionAccess
 {
 	public:
-		static int Add(TransactionViewModel model);
+		static vector<Transaction> GetByAccountID(int accountID);
+		static string Add(TransactionViewModel model);
 };

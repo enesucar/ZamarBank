@@ -1,12 +1,7 @@
 #include "AccountsView.h"
 
 void AccountsView(vector<Account> accounts, Customer customer, string message) {
-	_PartialHeaderView(customer);
-
-	if (message != "")
-	{
-		cout << "!!!!!!" << message << "!!!!!!" << endl;
-	}
+	_PartialHeaderView(customer, message);
 
 	if (accounts.size() == 0)
 	{
@@ -14,19 +9,29 @@ void AccountsView(vector<Account> accounts, Customer customer, string message) {
 	}
 	else
 	{
+		cout << left << setw(10) << "ID" << left << setw(20) 
+			 << "Hesap Tipi" << left << setw(20) << "Bakiye" << left << setw(40) << "IBAN" << endl;
+
 		for (Account account : accounts)
 		{
-			cout << account.ID << " " << (int)account.Type << " " << account.Balance << " " << account.IBAN << endl;
+			cout << left << setw(10) << account.ID << left << setw(20) 
+				 << AccountTypeToString(account.Type) << left << setw(20) << account.Balance
+				 << left << setw(40) << account.IBAN << endl;
 		}
 	}
 
-	int choise;
-	cout << "Geri dönmek için önce 0 tuþuna ardýndan enter tuþuna basýnýz." << endl;
-	cin >> choise;
+	int choice;
+	cout << endl << endl << "Geri dönmek için önce 0, hesap detaylarý için hesap ID'sini giriniz: ";
+	cin >> choice;
 
-	if (choise == 0)
+	if (choice == 0)
 	{
 		ProcessController processController;
 		return processController.ProcessGet(customer);
+	}
+	else
+	{
+		AccountsController accountsController;
+		return accountsController.AccountActivitiesGet(choice, customer);
 	}
 }

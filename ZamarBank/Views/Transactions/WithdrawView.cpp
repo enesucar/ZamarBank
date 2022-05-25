@@ -1,12 +1,7 @@
 #include "WithdrawView.h"
 
 void WithdrawView(Customer customer, string message) {
-	_PartialHeaderView(customer);
-
-	if (message != "")
-	{
-		cout << "!!!!!!" << message << "!!!!!!" << endl;
-	}
+	_PartialHeaderView(customer, message);
 
 	TransactionViewModel model;
 	model.Type = TransactionType::Withdraw;

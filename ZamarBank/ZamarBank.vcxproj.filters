@@ -93,6 +93,9 @@
     <ClCompile Include="Views\Transactions\TransferView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Views\Accounts\AccountActivities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Databases\ZamarBankDB.db" />
@@ -193,6 +196,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Views\Transactions\TransferView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Views\Accounts\AccountActivities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

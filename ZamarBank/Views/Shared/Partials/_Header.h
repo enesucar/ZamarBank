@@ -5,4 +5,4 @@
 using namespace std;
 
 void _PartialHeaderView(string message = "");
-void _PartialHeaderView(Customer customer);
+void _PartialHeaderView(Customer customer, string message = "");

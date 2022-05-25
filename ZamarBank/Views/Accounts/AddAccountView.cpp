@@ -3,12 +3,7 @@
 void AddAccountView(Customer customer, string message) {
 	int choice;
 
-	_PartialHeaderView(customer);
-
-	if (message != "")
-	{
-		cout << "!!!!!!" << message << "!!!!!!" << endl;
-	}
+	_PartialHeaderView(customer, message);
 
 	cout << "1: TL Hesabý" << endl;
 	cout << "2: Dolar Hesabý" << endl;
@@ -17,7 +12,7 @@ void AddAccountView(Customer customer, string message) {
 	cout << "Seçiminiz: ";
 	cin >> choice;
 
-	AccountType type = (AccountType)choice;
+	AccountType type = (AccountType)(choice - 1);
 	AccountsController accountsController;
 	return accountsController.AddAccountPost(type, customer);
 }

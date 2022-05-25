@@ -1,6 +1,6 @@
 #include "CustomerAccess.h"
 
-Customer CustomerAccess::Get(int ID)
+Customer CustomerAccess::GetByID(int ID)
 {
 	Customer customer;
 
@@ -68,11 +68,6 @@ Customer CustomerAccess::GetByIdentificationNumber(string identificationNumber)
 	sqlite3_close(DB);
 
 	return customer;
-}
-
-vector<Customer> CustomerAccess::GetList()
-{
-	return vector<Customer>();
 }
 
 int CustomerAccess::Add(CustomerRegisterViewModel model)
