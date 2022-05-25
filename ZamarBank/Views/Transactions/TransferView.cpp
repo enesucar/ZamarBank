@@ -9,7 +9,7 @@ void TransferView(Customer customer, string message) {
 	cout << "Yatýrmak istediðiniz miktar: ";
 	cin >> model.Balance;
 
-	cout << "Hesab ID'sini giriniz: ";
+	cout << "Hesap ID'sini giriniz: ";
 	cin >> model.FromAccountID;
 
 	cout << "Yatýrmak istediðiniz hesabýn IBAN adresi: ";
