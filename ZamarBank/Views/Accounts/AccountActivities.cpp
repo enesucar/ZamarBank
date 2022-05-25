@@ -10,7 +10,8 @@ void AccountActivitiesView(vector<Transaction> transactions, Customer customer, 
 	else
 	{
 		cout << left << setw(10) << "ID" << left << setw(30)
-			 << "Ýþlem Tipi" << left << setw(30) << "Bakiye" << left << setw(50) << "IBAN" << endl;
+			 << "Ýþlem Tipi" << left << setw(30) << "Bakiye" << left << setw(30) << "IBAN" 
+			 << "Açýklama" << endl;
 	
 		for (Transaction transaction : transactions)
 		{
@@ -45,7 +46,7 @@ void AccountActivitiesView(vector<Transaction> transactions, Customer customer, 
 
 			cout << left << setw(10) << transaction.ID << left << setw(30)
 				 << transactionType << left << setw(30) << balance
-				 << left << setw(50) << IBAN << endl;
+				 << left << setw(30) << IBAN <<	transaction.Description << endl;
 		}
 	}
 
