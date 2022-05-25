@@ -18,7 +18,3 @@ class CustomerRegisterViewModel
 		string Password;
 		string PasswordAgain;
 };
-
-class CustomerChangePasswordViewModel {
-
-};
