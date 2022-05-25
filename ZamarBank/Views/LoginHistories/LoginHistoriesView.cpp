@@ -3,7 +3,6 @@
 void LoginHistoriesView(vector<LoginHistory> loginHistories, Customer customer, string message) {
 	_PartialHeaderView(customer, message);
 	
-
 	cout << left << setw(10) << "ID" << left << setw(30)
 		<< "Giriþ Baþarý Durumu" << left << setw(30) << "Tarih ve Saat" << endl;
 
