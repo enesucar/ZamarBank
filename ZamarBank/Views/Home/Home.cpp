@@ -2,36 +2,31 @@
 
 void HomeView(string message) {
 	CustomersController customerController;
-	int choise;
+	int choice;
 
-	_PartialHeaderView();
+	_PartialHeaderView(message);
 
-	if (message != "")
-	{
-		cout << "!!!!!" << message << "!!!!!" << endl;
-	}
-
-	cout << "1: Kullanýcý giriþi" << endl;
-	cout << "2: Kullanýcý kaydý" << endl;
-	cout << "3: Þifremi unuttum" << endl;
+	cout << "1: Müþteri giriþi" << endl;
+	cout << "2: Müþteri kaydý" << endl;
+	cout << "3: Uygulamayý kapat" << endl;
 	cout << "\nSeçiminiz: ";
 
-	cin >> choise;
+	cin >> choice;
 
-	if (choise == 1)
+	if (choice == 1)
 	{
 		return customerController.LoginGet();
 	}
-	else if (choise == 2)
+	else if (choice == 2)
 	{
 		return customerController.RegisterGet();
 	}
-	else if (choise == 3)
+	else if (choice == 3)
 	{
-		return customerController.ChangePasswordGet();
+		exit(0);
 	}
 	else
 	{
-		return HomeView("Lütfen geçerli bir numara tuþlayýnýz.");
+		return HomeView("Lütfen geçerli bir rakam giriniz.");
 	}
 }
