@@ -15,8 +15,9 @@ void ProcessView(Customer customer, string message) {
 	cout << "3: Para Transferi" << endl;
 	cout << "4: Para Çekme" << endl;
 	cout << "5: Para Yatýrma" << endl;
-	cout << "6: Þifre Deðiþtir" << endl;
-	cout << "7: Çýkýþ" << endl;
+	cout << "6: Giriþ Kayýtlarým" << endl;
+	cout << "7: Þifre Deðiþtir" << endl;
+	cout << "8: Çýkýþ" << endl;
 	cout << "\nSeçiminiz: ";
 	cin >> choise;
 
@@ -30,7 +31,12 @@ void ProcessView(Customer customer, string message) {
 		AccountsController accountsController;
 		accountsController.AddAccountGet(customer);
 	}
-	else if (choise == 7)
+	else if (choise == 6)
+	{
+		CustomersController customerController;
+		customerController.LoginHistoryGet(customer);
+	}
+	else if (choise == 8)
 	{
 		HomeController homeController;
 		return homeController.HomeGet();

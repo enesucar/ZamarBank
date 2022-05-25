@@ -12,7 +12,7 @@
 
 class AccountAccess
 {
-public:
-	static vector<Account> GetListByCustomerID(Customer customer);
-	static int Add(AccountType type, Customer customer);
+	public:
+		static vector<Account> GetListByCustomerID(int customerID);
+		static int Add(AccountType type, int customerID);
 };

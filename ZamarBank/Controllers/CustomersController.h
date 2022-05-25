@@ -5,9 +5,10 @@
 #include "../Data/Models/Customer.h"
 #include "../Data/ViewModels/CustomerViewModel.h"
 #include "../Data/Access/CustomerAccess.h"
+#include "../Data/Access/LoginHistoryAccess.h"
 #include "../Views/Register/RegisterView.h"
 #include "../Views/Login/LoginView.h"
-#include "../Data/Access/LoginHistoryAccess.h"
+#include "../Views/LoginHistories/LoginHistoriesView.h"
 
 using namespace std;
 
@@ -20,6 +21,7 @@ class CustomersController
 		void RegisterPost(CustomerRegisterViewModel model);
 		void ChangePasswordGet();
 		void ChangePasswordPost(CustomerChangePasswordViewModel model);
+		void LoginHistoryGet(Customer customer);
 
 	private:
 		bool isCustomerExist(string number);

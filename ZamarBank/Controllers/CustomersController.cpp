@@ -69,6 +69,11 @@ void CustomersController::ChangePasswordPost(CustomerChangePasswordViewModel mod
 
 }
 
+void CustomersController::LoginHistoryGet(Customer customer) {
+	vector<LoginHistory> loginHistories = LoginHistoryAccess::GetListByCustomerID(customer.ID);
+	return LoginHistoriesView(loginHistories, customer);
+}
+
 bool CustomersController::isCustomerExist(string number) { // s takasýna bak
 	Customer customer = CustomerAccess::GetByIdentificationNumber(number);
 	return (customer.ID == 0) ? false : true;

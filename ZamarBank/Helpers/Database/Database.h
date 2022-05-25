@@ -8,6 +8,5 @@ class Database
 {
 	public:
 		static int ExecuteSQL(string sql);
-	private:
 		static const char* GetDatabaseFolderPath();
 };

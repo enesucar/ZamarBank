@@ -75,6 +75,9 @@
     <ClCompile Include="Helpers\String\String.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Views\LoginHistories\LoginHistoriesView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Databases\ZamarBankDB.db" />
@@ -154,6 +157,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Helpers\String\String.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Views\LoginHistories\LoginHistoriesView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

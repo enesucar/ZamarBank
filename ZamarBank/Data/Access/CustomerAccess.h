@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "../Models/Customer.h"
+#include "../Models/LoginHistory.h"
 #include "../ViewModels/CustomerViewModel.h"
 #include "../../Helpers/Database/Database.h"
 #include "../../Helpers/Random/Random.h"

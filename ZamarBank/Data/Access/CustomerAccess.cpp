@@ -4,7 +4,7 @@ Customer CustomerAccess::Get(int ID)
 {
 	Customer customer;
 
-	const char* path = R"(Databases\ZamarBankDB.db)";
+	const char* path = Database::GetDatabaseFolderPath();
 	sqlite3_stmt* stmt;
 	sqlite3* DB;
 
@@ -39,7 +39,7 @@ Customer CustomerAccess::GetByIdentificationNumber(string identificationNumber)
 {
 	Customer customer;
 
-	const char* path = R"(Databases\ZamarBankDB.db)";
+	const char* path = Database::GetDatabaseFolderPath();
 	sqlite3_stmt* stmt;
 	sqlite3* DB;
 
@@ -87,4 +87,5 @@ int CustomerAccess::Add(CustomerRegisterViewModel model)
 	int result = Database::ExecuteSQL(sql);
 	return result;
 }
+
 
