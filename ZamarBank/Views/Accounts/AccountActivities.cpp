@@ -24,7 +24,7 @@ void AccountActivitiesView(vector<Transaction> transactions, Customer customer, 
 
 			if (transaction.Type == TransactionType::Transfer)
 			{
-				if (transaction.FromAccountID == customer.ID) // parayý kullanýcý gönderdi
+				if (fromAccount.CustomerID == customer.ID) // parayý kullanýcý gönderdi
 				{
 					balance = "-" + to_string(transaction.Balance);
 					IBAN = toAccount.IBAN;
