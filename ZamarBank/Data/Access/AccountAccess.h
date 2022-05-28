@@ -13,9 +13,9 @@
 class AccountAccess
 {
 	public:
-		static Account GetByID(int ID);
+		static Account GetByAccountID(int accountID);
 		static Account GetByIBAN(string IBAN);
 		static vector<Account> GetListByCustomerID(int customerID);
-		static int Add(AccountType type, int customerID);
-		static int UpdateBalance(int accountID, double balance);
+		static void Add(AccountType type, int customerID);
+		static void UpdateBalance(int accountID, double balance);
 };

@@ -1,6 +1,6 @@
 #include "CustomerAccess.h"
 
-Customer CustomerAccess::GetByID(int ID)
+Customer CustomerAccess::GetByCustomerID(int customerID)
 {
 	Customer customer;
 
@@ -10,7 +10,7 @@ Customer CustomerAccess::GetByID(int ID)
 
 	sqlite3_open(path, &DB);
 
-	string sql = "Select * From Customer Where ID = "  + to_string(ID) + " And IsDeleted = 0";
+	string sql = "Select * From Customer Where ID = "  + to_string(customerID) + " And IsDeleted = 0";
 	int rc = sqlite3_prepare_v2(DB, sql.c_str(), -1, &stmt, NULL);
 	
 	while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
@@ -70,7 +70,7 @@ Customer CustomerAccess::GetByIdentificationNumber(string identificationNumber)
 	return customer;
 }
 
-int CustomerAccess::Add(CustomerRegisterViewModel model)
+void CustomerAccess::Add(CustomerRegisterModel model)
 {
 	string customerNumber = RandomHelper::GenerateRandomNumbers(8);
 	string createDate = DateTimeHelper::GetCurrentDateTime();
@@ -79,8 +79,7 @@ int CustomerAccess::Add(CustomerRegisterViewModel model)
 	string sql = "Insert Into Customer (FirstName, LastName, IdentificationNumber, CustomerNumber, Password, CreateDate, IsDeleted) ";
 	sql += "Values('" + model.FirstName + "', '" + model.LastName + "', '" + model.IdentificationNumber + "', '" + customerNumber + "', " + model.Password + ", '" + createDate + "', " + to_string(isDeleted) + ");";
 					
-	int result = Database::ExecuteSQL(sql);
-	return result;
+	Database::ExecuteSQL(sql);
 }
 
 

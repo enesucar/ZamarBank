@@ -10,5 +10,5 @@ class LoginHistoryAccess
 {
 	public:
 		static vector<LoginHistory> GetListByCustomerID(int customerID);
-		static int Add(LoginHistory model);
+		static void Add(LoginHistory model);
 };

@@ -15,8 +15,8 @@ void TransactionsController::AddTransactionGet(TransactionType type, Customer cu
 	}
 }
 
-void TransactionsController::AddTransactionPost(TransactionViewModel model, Customer customer, string message) {
-	Account account = AccountAccess::GetByID(model.FromAccountID);
+void TransactionsController::AddTransactionPost(TransactionAddModel model, Customer customer, string message) {
+	Account account = AccountAccess::GetByAccountID(model.FromAccountID);
 	
 	if (account.CustomerID != customer.ID)
 	{

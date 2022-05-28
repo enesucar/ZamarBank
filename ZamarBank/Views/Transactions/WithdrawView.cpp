@@ -3,7 +3,7 @@
 void WithdrawView(Customer customer, string message) {
 	_PartialHeaderView(customer, message);
 
-	TransactionViewModel model;
+	TransactionAddModel model;
 	model.Type = TransactionType::Withdraw;
 
 	cout << "Çekmek istediðiniz miktar: ";

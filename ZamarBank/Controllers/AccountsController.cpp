@@ -13,19 +13,14 @@ void AccountsController::AddAccountGet(Customer customer, string message)
 
 void AccountsController::AddAccountPost(AccountType type, Customer customer, string message)
 {
-	int result = AccountAccess::Add(type, customer.ID);
-
-	if (!result)
-	{
-		return AddAccountGet(customer, "Hesap oluþturulamadý, lütfen tekrar deneyiniz.");
-	}
+	AccountAccess::Add(type, customer.ID);
 
 	ProcessController processController;
 	return processController.ProcessGet(customer, "Hesap baþarýyla oluþturuldu.");
 }
 
 void AccountsController::AccountActivitiesGet(int accountID, Customer customer, string message) {
-	Account account = AccountAccess::GetByID(accountID);
+	Account account = AccountAccess::GetByAccountID(accountID);
 
 	if (account.CustomerID != customer.ID) // kullanýcýya ait olmayan hesap
 	{	
@@ -39,10 +34,9 @@ void AccountsController::AccountActivitiesGet(int accountID, Customer customer, 
 
 void AccountsController::CreateAccountActivityPdfGet(int transactionID, Customer customer, string message)
 {
-
 	Transaction transaction = TransactionAccess::GetByTransactionID(transactionID);
-	Account fromAccount = AccountAccess::GetByID(transaction.FromAccountID);
-	Account toAccount = AccountAccess::GetByID(transaction.ToAccountID);
+	Account fromAccount = AccountAccess::GetByAccountID(transaction.FromAccountID);
+	Account toAccount = AccountAccess::GetByAccountID(transaction.ToAccountID);
 	
 	if (fromAccount.CustomerID != customer.ID && toAccount.CustomerID != customer.ID) // kullanýcýya ait olmayan hesap
 	{

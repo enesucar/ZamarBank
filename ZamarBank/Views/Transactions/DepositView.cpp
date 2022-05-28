@@ -3,7 +3,7 @@
 void DepositView(Customer customer, string message) {
 	_PartialHeaderView(customer, message);
 
-	TransactionViewModel model;
+	TransactionAddModel model;
 	model.Type = TransactionType::Deposit;
 
 	cout << "Yatýrmak istediðiniz miktar: ";

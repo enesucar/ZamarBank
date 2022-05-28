@@ -40,7 +40,7 @@ void PdfFileHelper::CreatePdfFile(vector<string> text, string folderName)
 string PdfFileHelper::GetDesktopPathOfUser()
 {
     char* userprofile = std::getenv("USERPROFILE");
-    if (userprofile) // idk what this will return if run as SYSTEM, etc.
+    if (userprofile)
     {
         return std::string(userprofile) + "\\Desktop";
     }

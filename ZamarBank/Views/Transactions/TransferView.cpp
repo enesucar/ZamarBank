@@ -3,7 +3,7 @@
 void TransferView(Customer customer, string message) {
 	_PartialHeaderView(customer, message);
 
-	TransactionViewModel model;
+	TransactionAddModel model;
 	model.Type = TransactionType::Transfer;
 
 	cout << "Yatýrmak istediðiniz miktar: ";

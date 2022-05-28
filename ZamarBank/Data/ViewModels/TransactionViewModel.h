@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class TransactionViewModel {
+class TransactionAddModel {
 	public:
 		int FromAccountID;
 		string ToAccountIBAN;

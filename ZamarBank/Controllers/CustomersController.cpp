@@ -5,7 +5,7 @@ void CustomersController::LoginGet()
 	return LoginView();
 }
 
-void CustomersController::LoginPost(CustomerLoginViewModel model)
+void CustomersController::LoginPost(CustomerLoginModel model)
 {
 	Customer customer = CustomerAccess::GetByIdentificationNumber(model.IdentificationNumber);
 	LoginHistory loginHistory;
@@ -35,25 +35,21 @@ void CustomersController::RegisterGet() {
 	return RegisterView();
 }
 
-void CustomersController::RegisterPost(CustomerRegisterViewModel model)
+void CustomersController::RegisterPost(CustomerRegisterModel model)
 {
-	if (isCustomerExist(model.IdentificationNumber))
+	if (isCustomerExists(model.IdentificationNumber))
 	{
 		return RegisterView("Sistemde böyle bir kullanýcý zaten mevcut.");
 	}
 	else if (!isPasswordsSame(model.Password, model.PasswordAgain) ||
 			 !isPasswordLengthEqualSix(model.Password) ||
 			 isPasswordBeginWithZero(model.Password) ||
-			 isPasswordHaveAnyCharacter(model.Password))
+			 isPasswordHasAnyCharacter(model.Password))
 	{
 		return RegisterView("Þifreniz geçersiz.");
 	}
 
-	int result = CustomerAccess::Add(model);
-	if (!result)
-	{
-		return RegisterView("Kullanýcý kaydý yapýlamadý, lütfen tekrar deneyiniz.");
-	}
+	CustomerAccess::Add(model);
 
 	HomeController homeController;
 	return homeController.HomeGet("Kullanýcý sisteme baþarýyla eklendi.");
@@ -64,7 +60,7 @@ void CustomersController::LoginHistoryGet(Customer customer) {
 	return LoginHistoriesView(loginHistories, customer);
 }
 
-bool CustomersController::isCustomerExist(string number) { // s takasýna bak
+bool CustomersController::isCustomerExists(string number) { // s takasýna bak
 	Customer customer = CustomerAccess::GetByIdentificationNumber(number);
 	return (customer.ID == 0) ? false : true;
 }
@@ -81,7 +77,7 @@ bool CustomersController::isPasswordBeginWithZero(string password) {
 	return (password[0] == '0') ? true : false;
 }
 
-bool CustomersController::isPasswordHaveAnyCharacter(string password) {
+bool CustomersController::isPasswordHasAnyCharacter(string password) {
 	string numbers = "0123456789";
 	
 	for (char number : password)

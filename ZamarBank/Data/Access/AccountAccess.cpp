@@ -1,6 +1,6 @@
 #include "AccountAccess.h"
 
-Account AccountAccess::GetByID(int ID)
+Account AccountAccess::GetByAccountID(int accountID)
 {
 	Account account;
 
@@ -10,7 +10,7 @@ Account AccountAccess::GetByID(int ID)
 
 	sqlite3_open(path, &DB);
 
-	string sql = "Select * From Account Where ID = '" + to_string(ID) + "' And IsDeleted = 0;";
+	string sql = "Select * From Account Where ID = '" + to_string(accountID) + "' And IsDeleted = 0;";
 	int rc = sqlite3_prepare_v2(DB, sql.c_str(), -1, &stmt, NULL);
 
 	while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
@@ -89,7 +89,7 @@ vector<Account> AccountAccess::GetListByCustomerID(int customerID)
 	return accounts;
 }
 
-int AccountAccess::Add(AccountType type, int customerID) {
+void AccountAccess::Add(AccountType type, int customerID) {
 	Account account;
 	account.CustomerID = customerID;
 	account.Type = type;
@@ -110,11 +110,10 @@ int AccountAccess::Add(AccountType type, int customerID) {
 		+ account.IBAN + "', " + accountBalanceString + ", '" + account.CreateDate + "', " 
 		+ to_string(account.IsDeleted) + ");";
 
-	int result = Database::ExecuteSQL(sql);
-	return result;
+	Database::ExecuteSQL(sql);
 }
 
-int AccountAccess::UpdateBalance(int accountID, double balance) {
+void AccountAccess::UpdateBalance(int accountID, double balance) {
 	string balanceString = to_string(balance);
 	balanceString = StringHelper::ReplaceAll(balanceString, ",", ".");
 
@@ -122,7 +121,5 @@ int AccountAccess::UpdateBalance(int accountID, double balance) {
 	sql += "Set Balance = Balance + " + balanceString + " ";
 	sql += "Where ID = " + to_string(accountID) + " And IsDeleted = 0";
 
-	int result = Database::ExecuteSQL(sql);
-	return result;
-
+	Database::ExecuteSQL(sql);
 }

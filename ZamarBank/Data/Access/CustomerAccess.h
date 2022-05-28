@@ -12,7 +12,7 @@
 class CustomerAccess
 {
 	public:
-		static Customer GetByID(int ID);
+		static Customer GetByCustomerID(int customerID);
 		static Customer GetByIdentificationNumber(string identificationNumber);
-		static int Add(CustomerRegisterViewModel model);
+		static void Add(CustomerRegisterModel model);
 };

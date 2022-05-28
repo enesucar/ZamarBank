@@ -3,7 +3,7 @@
 void LoginView(string message) {
 	_PartialHeaderView(message);
 
-	CustomerLoginViewModel loginModel;
+	CustomerLoginModel loginModel;
 	CustomersController customerController;
 
 	cout << "TC Kimlik Numarasý: ";

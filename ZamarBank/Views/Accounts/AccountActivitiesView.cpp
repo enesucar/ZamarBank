@@ -15,8 +15,8 @@ void AccountActivitiesView(vector<Transaction> transactions, Customer customer, 
 	
 		for (Transaction transaction : transactions)
 		{
-			Account fromAccount = AccountAccess::GetByID(transaction.FromAccountID);
-			Account toAccount = AccountAccess::GetByID(transaction.ToAccountID);
+			Account fromAccount = AccountAccess::GetByAccountID(transaction.FromAccountID);
+			Account toAccount = AccountAccess::GetByAccountID(transaction.ToAccountID);
 
 			string transactionType = TransactionTypeToString(transaction.Type);
 			string balance = "";

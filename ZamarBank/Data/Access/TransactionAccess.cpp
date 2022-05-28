@@ -60,14 +60,14 @@ vector<Transaction> TransactionAccess::GetListByAccountID(int accountID)
 	return transactions;
 }
 
-string TransactionAccess::Add(TransactionViewModel model)
+string TransactionAccess::Add(TransactionAddModel model)
 {
 	string createDate = DateTimeHelper::GetCurrentDateTime();
 	string accountBalanceString = to_string(model.Balance);
 	accountBalanceString = StringHelper::ReplaceAll(accountBalanceString, ",", ".");
 	string sql = "";
 
-	Account fromAccount = AccountAccess::GetByID(model.FromAccountID);
+	Account fromAccount = AccountAccess::GetByAccountID(model.FromAccountID);
 
 	if (model.Type == TransactionType::Withdraw)
 	{

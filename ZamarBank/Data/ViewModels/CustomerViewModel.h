@@ -1,15 +1,13 @@
 #pragma once
 #include <string>
 
-using namespace std;
-
-class CustomerLoginViewModel {
+class CustomerLoginModel {
 	public:
 		string IdentificationNumber;
 		string Password;
 };
 
-class CustomerRegisterViewModel
+class CustomerRegisterModel
 {
 	public:
 		string FirstName;

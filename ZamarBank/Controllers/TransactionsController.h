@@ -14,5 +14,5 @@ class TransactionsController
 {
 	public:
 		void AddTransactionGet(TransactionType type,Customer customer, string message = "");
-		void AddTransactionPost(TransactionViewModel model, Customer customer, string message = "");
+		void AddTransactionPost(TransactionAddModel model, Customer customer, string message = "");
 };

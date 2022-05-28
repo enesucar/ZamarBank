@@ -16,15 +16,15 @@ class CustomersController
 {
 	public:
 		void LoginGet();
-		void LoginPost(CustomerLoginViewModel model);
+		void LoginPost(CustomerLoginModel model);
 		void RegisterGet();
-		void RegisterPost(CustomerRegisterViewModel model);
+		void RegisterPost(CustomerRegisterModel model);
 		void LoginHistoryGet(Customer customer);
 
 	private:
-		bool isCustomerExist(string number);
+		bool isCustomerExists(string number);
 		bool isPasswordLengthEqualSix(string password);
 		bool isPasswordBeginWithZero(string password);
-		bool isPasswordHaveAnyCharacter(string password);
+		bool isPasswordHasAnyCharacter(string password);
 		bool isPasswordsSame(string password, string passwordAgain);
 };

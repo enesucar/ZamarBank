@@ -3,7 +3,7 @@
 void RegisterView(string message) {
 	_PartialHeaderView(message);
 
-	CustomerRegisterViewModel registerModel;
+	CustomerRegisterModel registerModel;
 	CustomersController customerController;
 	cout << "Þifreniz sadece 6 adet rakamdan oluþmalýdýr.\nÞifreniz 0 ile baþlamamalýdýr.\n\n";
 
