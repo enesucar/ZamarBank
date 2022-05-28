@@ -7,6 +7,7 @@
 #include "../Shared/Partials/_Header.h"
 #include "../../Data/Models/Account.h"
 #include "../../Data/Models/Transaction.h"
+#include "../../Helpers/PdfFile/PdfFile.h"
 
 using namespace std;
 

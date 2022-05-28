@@ -1,4 +1,4 @@
-#include "AccountActivities.h"
+#include "AccountActivitiesView.h"
 
 void AccountActivitiesView(vector<Transaction> transactions, Customer customer, string message) {
 	_PartialHeaderView(customer, message);
@@ -51,12 +51,17 @@ void AccountActivitiesView(vector<Transaction> transactions, Customer customer, 
 	}
 
 	int choice;
-	cout << endl << endl << "Geri dönmek için önce 0 ardýndan enter tuþuna basýnýz: ";
+	cout << endl << endl << "Geri dönmek için önce 0, dekont indirmek için hesap ID'sini yazýnýz: ";
 	cin >> choice;
 
 	if (choice == 0)
 	{
 		AccountsController accountsController;
 		return accountsController.AccountsGet(customer);
+	}
+	else
+	{
+		AccountsController accountsController;
+		return accountsController.CreateAccountActivityPdfGet(choice, customer);
 	}
 }

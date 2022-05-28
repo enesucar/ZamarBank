@@ -9,6 +9,7 @@
 class TransactionAccess
 {
 	public:
-		static vector<Transaction> GetByAccountID(int accountID);
+		static Transaction GetByTransactionID(int transactionID);
+		static vector<Transaction> GetListByAccountID(int accountID);
 		static string Add(TransactionViewModel model);
 };	

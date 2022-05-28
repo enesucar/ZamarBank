@@ -93,7 +93,16 @@
     <ClCompile Include="Views\Transactions\TransferView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Views\Accounts\AccountActivities.cpp">
+    <ClCompile Include="Views\Accounts\AccountActivitiesView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Helpers\PdfFile\PdfFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\VulcanWarePDF\metrics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\VulcanWarePDF\pdf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -198,7 +207,16 @@
     <ClInclude Include="Views\Transactions\TransferView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Views\Accounts\AccountActivities.h">
+    <ClInclude Include="Views\Accounts\AccountActivitiesView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers\PdfFile\PdfFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\VulcanWarePDF\metrics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\VulcanWarePDF\pdf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

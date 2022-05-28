@@ -1,6 +1,35 @@
 #include "TransactionAccess.h"
 
-vector<Transaction> TransactionAccess::GetByAccountID(int accountID)
+Transaction TransactionAccess::GetByTransactionID(int transactionID)
+{
+	Transaction transaction;
+
+	const char* path = Database::GetDatabaseFolderPath();
+	sqlite3_stmt* stmt;
+	sqlite3* DB;
+
+	sqlite3_open(path, &DB);
+
+	string sql = "Select * From \"main\".\"Transaction\" Where ID = " + to_string(transactionID);
+	int rc = sqlite3_prepare_v2(DB, sql.c_str(), -1, &stmt, NULL);
+
+	while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
+		transaction.ID = sqlite3_column_int(stmt, 0);
+		transaction.FromAccountID = sqlite3_column_int(stmt, 1);
+		transaction.ToAccountID = sqlite3_column_int(stmt, 2);
+		transaction.Type = (TransactionType)sqlite3_column_int(stmt, 3);
+		transaction.Balance = sqlite3_column_double(stmt, 4);
+		transaction.Description = string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5)));
+		transaction.CreateDate = string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 6)));
+	}
+
+	sqlite3_finalize(stmt);
+	sqlite3_close(DB);
+
+	return transaction;
+}
+
+vector<Transaction> TransactionAccess::GetListByAccountID(int accountID)
 {
 	vector<Transaction> transactions;
 
