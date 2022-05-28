@@ -6,7 +6,7 @@ string DateTimeHelper::GetCurrentDateTime()
     struct tm tstruct;
     char buf[80];
     tstruct = *localtime(&now);
-    strftime(buf, sizeof(buf), "%d-%m-%Y %X", &tstruct);
+    strftime(buf, sizeof(buf), "%d.%m.%Y %R", &tstruct);
 
     return buf;
 }
