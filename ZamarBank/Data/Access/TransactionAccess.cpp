@@ -60,7 +60,7 @@ vector<Transaction> TransactionAccess::GetListByAccountID(int accountID)
 	return transactions;
 }
 
-string TransactionAccess::Add(TransactionAddModel model)
+void TransactionAccess::Add(TransactionAddModel model)
 {
 	string createDate = DateTimeHelper::GetCurrentDateTime();
 	string accountBalanceString = to_string(model.Balance);
@@ -71,11 +71,6 @@ string TransactionAccess::Add(TransactionAddModel model)
 
 	if (model.Type == TransactionType::Withdraw)
 	{
-		if (fromAccount.Balance < model.Balance) // hesabýnda bulunan paradan fazlasýna çekmek isterse
-		{
-			return "Hesabýnýzdaki yeterli miktarda para bulunmamaktadýr.";
-		}
-
 		AccountAccess::UpdateBalance(model.FromAccountID, model.Balance * - 1);
 		sql += "Insert Into \"main\".\"Transaction\" (FromAccountID, Type, Balance, Description, CreateDate) ";
 		sql += "Values (" + to_string(model.FromAccountID) + ", " + to_string((int)model.Type) + ", " + accountBalanceString + ", '" + model.Description + "', '" + createDate + "');";
@@ -90,19 +85,6 @@ string TransactionAccess::Add(TransactionAddModel model)
 	{
 		Account toAccount = AccountAccess::GetByIBAN(model.ToAccountIBAN);
 
-		if (fromAccount.Type != toAccount.Type) // Para göndereceði hesap tipi ayný olmalý.
-		{
-			return "Para göndereceðiniz hesabýn tipi sizin hesabýnýzla ayný olmalýdýr.";
-		}
-		if (toAccount.ID == 0) // Para aktarýlacak hesap bulunamadý.
-		{
-			return "Para aktarýlacak hesap bulunamadý.";
-		}
-		if (fromAccount.Balance < model.Balance) // Hesabýnda bulunan paradan fazlasýný göndermek isterse
-		{
-			return "Hesabýnýzdaki yeterli miktarda para bulunmamaktadýr.";
-		}
-
 		AccountAccess::UpdateBalance(model.FromAccountID, model.Balance * -1);
 		AccountAccess::UpdateBalance(toAccount.ID, model.Balance);
 
@@ -110,10 +92,5 @@ string TransactionAccess::Add(TransactionAddModel model)
 		sql += "Values (" + to_string(model.FromAccountID) + ", " + to_string(toAccount.ID) + ", " + to_string((int)model.Type) + ", " + accountBalanceString + ", '" + model.Description + "', '" + createDate + "');";
 	} 
 
-	int result = Database::ExecuteSQL(sql);
-	if (result > 0)
-	{
-		return "1";
-	}
-	return "Ýþlem gerçekleþtirilemedi.";
+	Database::ExecuteSQL(sql);
 }

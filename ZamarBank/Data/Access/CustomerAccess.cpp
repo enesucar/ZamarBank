@@ -81,5 +81,3 @@ void CustomerAccess::Add(CustomerRegisterModel model)
 					
 	Database::ExecuteSQL(sql);
 }
-
-

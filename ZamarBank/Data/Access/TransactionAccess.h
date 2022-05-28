@@ -11,5 +11,5 @@ class TransactionAccess
 	public:
 		static Transaction GetByTransactionID(int transactionID);
 		static vector<Transaction> GetListByAccountID(int accountID);
-		static string Add(TransactionAddModel model);
+		static void Add(TransactionAddModel model);
 };	
