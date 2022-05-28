@@ -50,4 +50,9 @@ void ProcessView(Customer customer, string message) {
 		HomeController homeController;
 		return homeController.HomeGet();
 	}
+	else
+	{
+		ProcessController processController;
+		processController.ProcessGet(customer, "Lütfen geçerli bir rakam giriniz.");
+	}
 }
