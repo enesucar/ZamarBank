@@ -51,7 +51,7 @@ void AccountActivitiesView(vector<Transaction> transactions, Customer customer, 
 	}
 
 	int choice;
-	cout << endl << endl << "Geri dönmek için önce 0 ardýndan enter tuþunsa basýnýz. ";
+	cout << endl << endl << "Geri dönmek için önce 0 ardýndan enter tuþuna basýnýz: ";
 	cin >> choice;
 
 	if (choice == 0)
