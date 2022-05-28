@@ -93,7 +93,7 @@
     <ClCompile Include="Views\Transactions\TransferView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Views\Accounts\AccountActivitiesView.cpp">
+    <ClCompile Include="Views\Transactions\TransactionsView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Helpers\PdfFile\PdfFile.cpp">
@@ -207,7 +207,7 @@
     <ClInclude Include="Views\Transactions\TransferView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Views\Accounts\AccountActivitiesView.h">
+    <ClInclude Include="Views\Transactions\TransactionsView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Helpers\PdfFile\PdfFile.h">

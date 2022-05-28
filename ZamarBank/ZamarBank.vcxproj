@@ -37,7 +37,7 @@
     <ClCompile Include="Sources\SQLite3\sqlite3.c" />
     <ClCompile Include="Sources\VulcanWarePDF\metrics.cpp" />
     <ClCompile Include="Sources\VulcanWarePDF\pdf.cpp" />
-    <ClCompile Include="Views\Accounts\AccountActivitiesView.cpp" />
+    <ClCompile Include="Views\Transactions\TransactionsView.cpp" />
     <ClCompile Include="Views\Accounts\AccountsView.cpp" />
     <ClCompile Include="Views\Accounts\AddAccountView.cpp" />
     <ClCompile Include="Views\Home\Home.cpp" />
@@ -79,7 +79,7 @@
     <ClInclude Include="Helpers\String\String.h" />
     <ClInclude Include="Sources\VulcanWarePDF\metrics.h" />
     <ClInclude Include="Sources\VulcanWarePDF\pdf.h" />
-    <ClInclude Include="Views\Accounts\AccountActivitiesView.h" />
+    <ClInclude Include="Views\Transactions\TransactionsView.h" />
     <ClInclude Include="Views\Accounts\AccountsView.h" />
     <ClInclude Include="Views\Accounts\AddAccountView.h" />
     <ClInclude Include="Views\Home\Home.h" />

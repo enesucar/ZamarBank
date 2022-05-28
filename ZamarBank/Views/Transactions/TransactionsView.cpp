@@ -1,6 +1,6 @@
-#include "AccountActivitiesView.h"
+#include "TransactionsView.h"
 
-void AccountActivitiesView(vector<Transaction> transactions, Customer customer, string message) {
+void TransactionsView(vector<Transaction> transactions, Customer customer, string message) {
 	_PartialHeaderView(customer, message);
 
 	if (transactions.size() == 0)
@@ -61,7 +61,7 @@ void AccountActivitiesView(vector<Transaction> transactions, Customer customer, 
 	}
 	else
 	{
-		AccountsController accountsController;
-		return accountsController.CreateAccountActivityPdfGet(choice, customer);
+		TransactionsController transactionsController;
+		return transactionsController.CreateTransactionPdfGet(choice, customer);
 	}
 }

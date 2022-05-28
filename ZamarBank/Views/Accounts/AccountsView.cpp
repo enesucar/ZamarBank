@@ -31,7 +31,7 @@ void AccountsView(vector<Account> accounts, Customer customer, string message) {
 	}
 	else
 	{
-		AccountsController accountsController;
-		return accountsController.AccountActivitiesGet(choice, customer);
+		TransactionsController transactionsController;
+		return transactionsController.TransactionsGet(choice, customer);
 	}
 }

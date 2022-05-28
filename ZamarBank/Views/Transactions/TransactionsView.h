@@ -11,4 +11,4 @@
 
 using namespace std;
 
-void AccountActivitiesView(vector<Transaction>, Customer customer, string message = "");
+void TransactionsView(vector<Transaction>, Customer customer, string message = "");
