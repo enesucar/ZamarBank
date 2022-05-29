@@ -1,7 +1,7 @@
 /*
 Enes Uçar 21040101029
 Mühendislik Fakültesi - Bilgisayar Mühendisliði Bölümü - 1. Sýnýf 2. Dönem
-26.05.2022
+29.05.2022
 */
 
 #include <iostream>
