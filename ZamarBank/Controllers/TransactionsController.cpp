@@ -30,12 +30,12 @@ void TransactionsController::AddTransactionGet(TransactionType type, Customer cu
 
 void TransactionsController::AddTransactionPost(TransactionAddModel model, Customer customer, string message) {
 	Account fromAccount = AccountAccess::GetByAccountID(model.FromAccountID);
-	
+
 	if (fromAccount.CustomerID != customer.ID) // kullanýcýya ait olmayan hesap veya yanlýþ girilen hesap ID
 	{
 		return AddTransactionGet(model.Type, customer, "Lütfen geçerli bir hesap ID'si giriniz.");
 	}
-	
+
 	if (model.Type == TransactionType::Withdraw)
 	{
 		if (fromAccount.Balance < model.Balance) // hesabýnda bulunan paradan fazlasýna çekmek isterse
@@ -62,7 +62,7 @@ void TransactionsController::AddTransactionPost(TransactionAddModel model, Custo
 	}
 
 	TransactionAccess::Add(model);
-	
+
 	ProcessController processController;
 	return processController.ProcessGet(customer, "Ýþlem baþarýyla gerçekleþti!");
 

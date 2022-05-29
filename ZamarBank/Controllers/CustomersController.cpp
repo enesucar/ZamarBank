@@ -12,7 +12,7 @@ void CustomersController::LoginPost(CustomerLoginModel model)
 
 	if (customer.ID == 0)
 	{
-		return LoginView("TC Kimlik numarasý yanlýþ.");
+		return LoginView("T.C. Kimlik numarasý yanlýþ.");
 	}
 	else if (customer.Password != model.Password)
 	{

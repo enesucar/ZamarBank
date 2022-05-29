@@ -21,7 +21,7 @@ void AccountsView(vector<Account> accounts, Customer customer, string message) {
 	}
 
 	int choice;
-	cout << endl << endl << "Geri dönmek için önce 0, hesap detaylarý için hesap ID'sini giriniz: ";
+	cout << endl << endl << "Geri dönmek istersiniz 0, hesap detaylarýný görmek isterseniz hesap ID'sini giriniz: ";
 	cin >> choice;
 
 	if (choice == 0)

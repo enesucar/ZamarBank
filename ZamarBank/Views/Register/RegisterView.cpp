@@ -5,7 +5,7 @@ void RegisterView(string message) {
 
 	CustomerRegisterModel registerModel;
 	CustomersController customerController;
-	cout << "Þifreniz sadece 6 adet rakamdan oluþmalýdýr.\nÞifreniz 0 ile baþlamamalýdýr.\n\n";
+	cout << "Þifreniz 6 adet rakamdan oluþmalýdýr.\nÞifreniz 0 ile baþlamamalýdýr.\n\n";
 
 	cout << "Ýsim: ";
 	cin >> registerModel.FirstName;
@@ -13,7 +13,7 @@ void RegisterView(string message) {
 	cout << "Soy isim: ";
 	cin >> registerModel.LastName;
 	
-	cout << "TC Kimlik Numarasý: ";
+	cout << "T.C. Kimlik Numarasý: ";
 	cin >> registerModel.IdentificationNumber;
 
 	cout << "Þifre: ";

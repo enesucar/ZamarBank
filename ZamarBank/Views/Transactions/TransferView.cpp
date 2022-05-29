@@ -6,13 +6,13 @@ void TransferView(Customer customer, string message) {
 	TransactionAddModel model;
 	model.Type = TransactionType::Transfer;
 
-	cout << "Yatýrmak istediðiniz miktar: ";
+	cout << "Göndermek istediðiniz miktar: ";
 	cin >> model.Balance;
 
 	cout << "Hesap ID'sini giriniz: ";
 	cin >> model.FromAccountID;
 
-	cout << "Yatýrmak istediðiniz hesabýn IBAN adresi: ";
+	cout << "Para göndermek istediðiniz hesabýn IBAN adresi: ";
 	getline(std::cin >> ws, model.ToAccountIBAN);
 
 	cout << "Açýklama: ";

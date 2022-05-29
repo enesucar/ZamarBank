@@ -51,7 +51,7 @@ void TransactionsView(vector<Transaction> transactions, Customer customer, strin
 	}
 
 	int choice;
-	cout << endl << endl << "Geri dönmek için önce 0, dekont indirmek için hesap ID'sini yazýnýz: ";
+	cout << endl << endl << "Geri dönmek isterseniz 0, dekont indirmek isterseniz iþlem ID'sini yazýnýz: ";
 	cin >> choice;
 
 	if (choice == 0)
