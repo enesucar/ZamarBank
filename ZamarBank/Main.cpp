@@ -6,7 +6,6 @@ Mühendislik Fakültesi - Bilgisayar Mühendisliði Bölümü - 1. Sýnýf 2. Dönem
 
 #include <iostream>
 #include <locale.h>
-#include "Views/Shared/Partials/_Header.h"
 #include "Controllers/HomeController.h"
 
 using namespace std;
